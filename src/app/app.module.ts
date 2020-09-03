@@ -27,7 +27,7 @@ import {MatchManagementService} from './match-management/match-management.servic
     ReactiveFormsModule
   ],
 
-  
+
   providers: [MatchManagementService],
   bootstrap: [AppComponent]
 })
