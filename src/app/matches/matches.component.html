@@ -1,0 +1,48 @@
+<h1 class="text-center mt-sm-2 mb-sm-5">All matches</h1>
+
+<div *ngFor="let match of matches" class="mt-sm-3 pt-sm-2 pl-sm-2 pr-sm-2 pb-sm-2" style="background-color: #e9ecef; border-radius: 10px;">
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="row">
+        <div class="col-sm-5">
+          <img class="img-fluid rounded-circle" src="http://placehold.it/150x150">
+        </div>
+
+        <div class="col-sm-7">
+          <div class="font-weight-bold" style="margin-top: 22%; font-size: 30px">{{match.homeTeam.replace("-", " ")}}</div>
+          <span class="text-muted">Country: {{match.homeTeamCountry}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-2 text-center" style="margin-top: 3%">
+      <div class="text-center mb-sm-2">Start time: {{match.time}}h</div>
+      <a class="btn btn-info font-weight-bold btn-block text-white" [routerLink] = "['/match-details', match.homeTeam, 'vs', match.awayTeam]">Stats</a>
+      <div class="row mt-1">
+        <div class="col-sm-6">
+          <button class="btn btn-success btn-block" (click)="addMatchToMyMatches(match.homeTeam, match.awayTeam, box.value)">Add</button>
+        </div>
+
+        <div class="col-sm-6">
+          <input class="form-control" type="text" placeholder="" #box>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-5  text-right">
+      <div class="row">
+        <div class="col-sm-7">
+          <div class="font-weight-bold" style="margin-top: 22%; font-size: 30px ">{{match.awayTeam.replace('-', ' ')}}</div>
+          <span class="text-muted">Country: {{match.awayTeamCountry}}</span>
+        </div>
+
+        <div class="col-sm-5">
+          <img class="img-fluid rounded-circle" src="http://placehold.it/150x150">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

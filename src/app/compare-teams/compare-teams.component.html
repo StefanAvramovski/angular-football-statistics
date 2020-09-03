@@ -1,0 +1,29 @@
+<h1 class="text-center mt-sm-2">Compare two teams</h1>
+
+<div class="row mt-sm-5">
+  <div class="col-sm-5 text-center">
+    <label class="font-weight-bold">Home team:</label>
+  </div>
+
+  <div class="col-sm-2">
+
+  </div>
+
+  <div class="col-sm-5 text-center">
+    <label class="font-weight-bold">Away team:</label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-5 text-center">
+    <input type="text" class="form-control" placeholder="Enter name" [(ngModel)]="homeTeam" [value]="homeTeam">
+  </div>
+
+  <div class="col-sm-2">
+    <button type="button" class="btn btn-info font-weight-bold btn-block text-white" [routerLink] = "['/match-details', this.homeTeam, 'vs', this.awayTeam]">Compare</button>
+  </div>
+
+  <div class="col-sm-5 text-center">
+    <input type="text" class="form-control" placeholder="Enter name" [(ngModel)]="awayTeam" [value]="awayTeam">
+  </div>
+</div>

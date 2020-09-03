@@ -1,0 +1,95 @@
+<div class="container mt-5">
+  <div  class="row">
+    <div class="col-sm-5">
+      <div class="row">
+        <div class="col-sm-5">
+          <img class="img-fluid rounded-circle" src="http://placehold.it/150x150">
+        </div>
+
+        <div class="col-sm-7">
+          <div class="font-weight-bold" style="margin-top: 22%; font-size: 30px">{{match.homeTeam}}</div>
+          <span class="text-muted">Country: {{match.homeTeamCountry}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-2 text-center font-weight-bold" style="margin-top: 5%; font-size: 30px">
+      <button class="btn btn-success btn-block" (click) = "addMatchToMyMatches(match.homeTeam, match.awayTeam, box.value)">Add</button>
+      <input class="form-control mt-1" type="text" #box>
+    </div>
+
+    <div class="col-sm-5  text-right">
+      <div class="row">
+        <div class="col-sm-7">
+          <div class="font-weight-bold" style="margin-top: 22%; font-size: 30px">{{ match.awayTeam }}</div>
+          <span class="text-muted">Country: {{ match.awayTeamCountry }}</span>
+        </div>
+
+        <div class="col-sm-5">
+          <img class="img-fluid rounded-circle" src="http://placehold.it/150x150">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-sm-5">
+    <div class="col-6">
+      <h4 class="text-center mb-sm-5">{{ match.homeTeam }} statistics</h4>
+      <div>
+        <canvas id="homeTeamCanvasId">
+          {{ homeTeamChart }}
+        </canvas>
+      </div>
+      <br><br>
+      <h4 class="text-center">Number of goals</h4>
+      <div>
+        <canvas id="homeTeamPieChartId">
+          {{ homeTeamPieChart }}
+        </canvas>
+      </div>
+    </div>
+
+
+    <div class="col-6">
+      <h4 class="text-center mb-sm-5">{{ match.awayTeam }} statistics</h4>
+      <div>
+        <canvas id="awayTeamCanvasId">
+          {{awayTeamChart}}
+        </canvas>
+      </div>
+
+      <br><br>
+      <h4 class="text-center">Number of goals</h4>
+      <div>
+        <canvas id="awayTeamPieChartId">
+          {{ awayTeamPieChart }}
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="text-center mt-sm-5">Against each other</h3>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div>
+        <canvas id="againstEachOtherId">
+          {{ againstEachOtherChart }}
+        </canvas>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div>
+        <canvas id="againstEachOtherHomeAwayId" >
+          {{ againstEachOtherHomeAwayChart }}
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-sm-5" style="font-size: 23px;">Average of match: <span class="font-weight-bold">{{match.averageTotalGoals}}</span></div>
+  <div class="mb-sm-5" style="font-size: 23px;">Changed average of match: <span class="font-weight-bold">{{match.averageTotalGoalsChanged}}</span></div>
+</div>
+
